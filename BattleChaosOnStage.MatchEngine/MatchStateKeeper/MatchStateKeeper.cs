@@ -1,20 +1,15 @@
-﻿using BattleChaosOnStage.Core.Game;
+﻿using BattleChaosOnStage.Core.Board;
+using BattleChaosOnStage.Core.Match;
 using BattleChaosOnStage.EventBus.Events;
 using System.Linq;
 
-namespace BattleChaosOnStage.MatchEngine.GameStateKeeper
+namespace BattleChaosOnStage.MatchEngine.MatchStateKeeper
 {
-    public class GameStateKeeper : IGameStateKeeper
+    public class MatchStateKeeper : IMatchStateKeeper
     {
-        private IInGamePlayerCollection _playerCollection;
         private RowPosition _currentPhase;
         private int _currentRound;
         private int _currentPlayerIndex;
-
-        public GameStateKeeper(IInGamePlayerCollection playerCollection)
-        {
-            _playerCollection = playerCollection;
-        }
 
         public void StartGame()
         {
@@ -26,14 +21,13 @@ namespace BattleChaosOnStage.MatchEngine.GameStateKeeper
             throw new System.NotImplementedException();
         }
 
-        public GameState GetGameState()
+        public MatchState GetGameState()
         {
-            return new GameState
+            return new MatchState
             {
-                Players = _playerCollection.ToDictionary(x => x.Key, x => x.Value),
+                //Players = _playerCollection.ToDictionary(x => x.Key, x => x.Value),
                 PhaseIndex = _currentPhase,
-                RoundNumber = _currentRound,
-                CurrentPlayerIndex = _currentPlayerIndex
+                RoundNumber = _currentRound
             };
         }
 

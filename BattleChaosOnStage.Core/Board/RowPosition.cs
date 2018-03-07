@@ -1,4 +1,4 @@
-﻿namespace BattleChaosOnStage.Core.Game
+﻿namespace BattleChaosOnStage.Core.Board
 {
     public enum RowPosition
     {

@@ -1,11 +1,11 @@
 ﻿using BattleChaosOnStage.Core.Character;
 using System;
 
-namespace BattleChaosOnStage.Core.Game
+namespace BattleChaosOnStage.Core.Board
 {
-    public abstract class UnitBase<T> where T : CharacterBase
+    public class Unit<T> where T : CharacterBase
     {
-        public UnitBase(T character)
+        public Unit(T character)
         {
             Character = character;
             UnitId = Guid.NewGuid();
@@ -14,8 +14,8 @@ namespace BattleChaosOnStage.Core.Game
 
         T Character { get; set; }
         int Health { get; set; }
+        int Armor { get; set; }
         Guid UnitId { get; set; }
         bool IsDead { get; set; }
-        bool IsInAgony { get; set; }
     }
 }
