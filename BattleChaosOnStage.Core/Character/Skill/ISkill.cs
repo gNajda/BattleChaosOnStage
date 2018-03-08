@@ -1,5 +1,5 @@
-﻿using BattleChaosOnStage.Core.Match.PlayerAction;
-using System;
+﻿using BattleChaosOnStage.Core.Match.Event;
+using System.Collections.Generic;
 
 namespace BattleChaosOnStage.Core.Character.Skill
 {
@@ -7,10 +7,7 @@ namespace BattleChaosOnStage.Core.Character.Skill
     {
         string Name { get; }
         string Description { get; }
-        SkillType SkillType { get; }
-        int SkillEffectValue { get; }
-        Type PlayerAction { get; }
-        TargetType TargetType { get; }
+        void ApplySkill(List<IEvent> eventList);
         bool IsEnabled { get; }
         void Disable();
         void Enable();

@@ -1,5 +1,7 @@
 ﻿using BattleChaosOnStage.Core.Character;
+using BattleChaosOnStage.Core.Character.Status;
 using System;
+using System.Collections.Generic;
 
 namespace BattleChaosOnStage.Core.Board
 {
@@ -12,10 +14,11 @@ namespace BattleChaosOnStage.Core.Board
             Health = Character.BaseHealth;
         }
 
-        T Character { get; set; }
-        int Health { get; set; }
-        int Armor { get; set; }
-        Guid UnitId { get; set; }
-        bool IsDead { get; set; }
+        public T Character { get; set; }
+        public int Health { get; set; }
+        public int Armor { get; set; }
+        public Guid UnitId { get; set; }
+        public bool IsDead { get; set; }
+        public List<IStatus> Statuses { get; set; }
     }
 }

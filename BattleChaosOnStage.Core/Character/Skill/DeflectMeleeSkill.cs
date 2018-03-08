@@ -1,27 +1,28 @@
 ﻿using System;
-using BattleChaosOnStage.Core.Match.PlayerAction;
+using System.Collections.Generic;
+using BattleChaosOnStage.Core.Match.Event;
 
 namespace BattleChaosOnStage.Core.Character.Skill
 {
     public class DeflectMeleeSkill : ISkill
     {
         private const string SkillName = "Deflect Melee";
-        private readonly string SkillDescription = "Prevents enemy from countering your melee attacks";
-        private readonly int DamageReflectAmount;
+        private readonly string SkillDescription = "Deflects damage to the enemy when attacked by melee";
+        public readonly int DamageReflectAmount;
         private bool _isEnabled = true;
 
-        public SkillType SkillType => SkillType.ActionModification;
         public bool IsEnabled => _isEnabled;
         public string Name => SkillName;
         public string Description => SkillDescription;
-        public Type PlayerAction => typeof(AttackAction);
-        public TargetType TargetType => TargetType.Self;
 
-        public int SkillEffectValue => DamageReflectAmount;
-
-        public DeflectMeleeSkill(int deflectDamageAmount)
+        public DeflectMeleeSkill(int _damageReflectAmount)
         {
-            DamageReflectAmount = deflectDamageAmount;
+            DamageReflectAmount = _damageReflectAmount;
+        }
+
+        public void ApplySkill(List<IEvent> eventList)
+        {
+            throw new NotImplementedException();
         }
 
         public void Disable()

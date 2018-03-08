@@ -1,5 +1,6 @@
-﻿using BattleChaosOnStage.Core.Match.PlayerAction;
+﻿using BattleChaosOnStage.Core.Match.Event;
 using System;
+using System.Collections.Generic;
 
 namespace BattleChaosOnStage.Core.Character.Skill
 {
@@ -9,14 +10,14 @@ namespace BattleChaosOnStage.Core.Character.Skill
         private const string SkillDescription = "Prevents enemy from countering your melee attacks";
         private bool _isEnabled = true;
 
-        public SkillType SkillType => SkillType.ActionModification;
         public bool IsEnabled => _isEnabled;
         public string Name => SkillName;
         public string Description => SkillDescription;
-        public Type PlayerAction => typeof(AttackAction);
-        public TargetType TargetType => TargetType.Enemy;
 
-        public int SkillEffectValue => 0;
+        public void ApplySkill(List<IEvent> eventList)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Disable()
         {

@@ -8,4 +8,10 @@
     <ProjectReference Include="..\BattleChaosOnStage.Core\BattleChaosOnStage.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Bus\" />
+    <Folder Include="EventHandlers\" />
+    <Folder Include="Events\" />
+  </ItemGroup>
+
 </Project>
