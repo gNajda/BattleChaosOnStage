@@ -1,5 +1,4 @@
-﻿using BattleChaosOnStage.Core.Match.Event;
-using System.Collections.Generic;
+﻿using BattleChaosOnStage.Core.Board;
 
 namespace BattleChaosOnStage.Core.Character.Skill
 {
@@ -7,7 +6,7 @@ namespace BattleChaosOnStage.Core.Character.Skill
     {
         string Name { get; }
         string Description { get; }
-        void ApplySkill(List<IEvent> eventList);
+        void ApplySkill<T>(Unit<T> unit) where T : CharacterBase;
         bool IsEnabled { get; }
         void Disable();
         void Enable();

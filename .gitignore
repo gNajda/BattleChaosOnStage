@@ -5,3 +5,5 @@
 /BattleChaosOnStage.MatchEngine/obj
 /BattleChaosOnStage.MatchEngine/bin
 /.vs
+/BattleChaosOnStage.MatchEngine.Tests/bin
+/BattleChaosOnStage.MatchEngine.Tests/obj

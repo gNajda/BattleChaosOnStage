@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using BattleChaosOnStage.Core.Board;
 using BattleChaosOnStage.Core.Match.Event;
 
 namespace BattleChaosOnStage.Core.Character.Skill
@@ -33,6 +34,11 @@ namespace BattleChaosOnStage.Core.Character.Skill
         public void Enable()
         {
             _isEnabled = true;
+        }
+
+        public void ApplySkill<T>(Unit<T> unit) where T : CharacterBase
+        {
+            throw new NotImplementedException();
         }
     }
 }

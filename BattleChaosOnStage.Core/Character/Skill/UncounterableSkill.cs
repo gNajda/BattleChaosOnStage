@@ -1,4 +1,5 @@
-﻿using BattleChaosOnStage.Core.Match.Event;
+﻿using BattleChaosOnStage.Core.Board;
+using BattleChaosOnStage.Core.Match.Event;
 using System;
 using System.Collections.Generic;
 
@@ -15,6 +16,11 @@ namespace BattleChaosOnStage.Core.Character.Skill
         public string Description => SkillDescription;
 
         public void ApplySkill(List<IEvent> eventList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ApplySkill<T>(Unit<T> unit) where T : CharacterBase
         {
             throw new NotImplementedException();
         }

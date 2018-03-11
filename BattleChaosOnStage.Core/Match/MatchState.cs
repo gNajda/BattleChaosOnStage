@@ -1,6 +1,9 @@
 ﻿using BattleChaosOnStage.Core.Board;
+using BattleChaosOnStage.Core.Character;
 using BattleChaosOnStage.Core.Match.Effect;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BattleChaosOnStage.Core.Match
 {
@@ -23,6 +26,11 @@ namespace BattleChaosOnStage.Core.Match
             }
 
             CurrentPlayer = keys[currentIndex++];
+        }
+
+        public Unit<CharacterBase> GetUnit(Guid unitId)
+        {
+            return Players.Values.Select(x => x.GetUnit(unitId)).FirstOrDefault(x => x != null);
         }
     }
 }

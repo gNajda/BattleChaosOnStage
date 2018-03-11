@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BattleChaosOnStage.Core\BattleChaosOnStage.Core.csproj" />
-    <ProjectReference Include="..\BattleChaosOnStage.EventBus\BattleChaosOnStage.EventBus.csproj" />
   </ItemGroup>
 
 </Project>

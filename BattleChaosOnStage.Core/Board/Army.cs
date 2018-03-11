@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using BattleChaosOnStage.Core.Character;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BattleChaosOnStage.Core.Board
 {
@@ -8,6 +11,11 @@ namespace BattleChaosOnStage.Core.Board
         public FormationRow FrontRow { get; set; }
         public FormationRow MiddleRow { get; set; }
         public FormationRow BackRow { get; set; }
+
+        public Unit<CharacterBase> GetUnit(Guid unitId)
+        {
+            return this.SelectMany(x => x.Units.Select(y => y.Value)).FirstOrDefault(x => x.UnitId == unitId);
+        }
 
         public IEnumerator<FormationRow> GetEnumerator()
         {
